@@ -25,11 +25,274 @@ namespace ConsoleOLdCourse
     {
         static void Main(string[] args)
         {
+            Console.Write("Введите первое число: ");
+            var aString = Console.ReadLine();
+            var a = ConvertStringToDouble(aString);
+
+            Console.Write("Введите второе число: ");
+            var bString = Console.ReadLine();
+            var b = ConvertStringToDouble(bString);
+
+            // a =3 b = 2
+            var result = Sum(a, b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+
+            var result2 = Sum1(ref a, ref b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+            Console.WriteLine($"Результатом сложения будет: {result}");
+            Console.WriteLine($"Результатом сложения будет: {result2}");
+
+
+            var result3 = Sum3(a, b, out bool aLessB);
+            if(aLessB)
+                Console.WriteLine("A меньше B");
+            else
+                Console.WriteLine("A больше B");
+            Console.WriteLine($"Результатом сложения будет: {result3}");
+
+
+            //var rand1 = new Random();
+            //var arrayX = new int[5, 4];
+
+            //for (int j = 0; j < 4; j++)
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        arrayX[i, j] = rand1.Next(10) + 5;
+            //    }
+            //}
+
+            //DrawArray(arrayX, 5, 4);
+        }
+
+        private static double Sum(double a, double b)
+        {
+            a = a * 10;
+            b = b * 5;
+            return a + b;
+        }
+
+        private static double Sum1(ref double a, ref double b)
+        {
+            a = a * 10;
+            b = b * 5;
+            return a + b;
+        }
+
+        private static double Sum2(in double a, in double b)
+        {
+            return a + b;
+        }
+
+        private static double Sum3(double a, double b, out bool aLessB)
+        {
+            if (a < b)
+                aLessB = true;
+            else
+                aLessB = false;
+
+            return a + b;
+        }
+
+        private static void DrawArray(int[,] array, int intX, int intY)
+        {
+            for (int j = 0; j < intY; j++)
+            {
+                for (int i = 0; i < intX; i++)
+                {
+                    Console.Write($"{array[i, j]} ");
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        private static double ConvertStringToDouble(string aString)
+        {
+            int res1;
+            double res2;
+            try
+            {
+                res1 = Convert.ToInt32(aString);
+                return res1;
+            }
+            catch
+            {
+                try
+                {
+                    res2 = Convert.ToDouble(aString);
+                    return res2;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            return 0;
+        }
+
+        private static void Test4()
+        {
+            //var arraySingle = new double[35]; // {}
+
+            var rand1 = new Random(5);
+            var rand2 = new Random(5);
+
+            var random1 = rand1.Next();
+            Console.WriteLine($"Охрененно большое псевдослучайное число: {random1}");
+            var random2 = rand1.Next(50) + 1;
+            Console.WriteLine($"Псевдослучайное число [1-50]: {random2}");
+            var random3 = rand1.Next(1, 30);
+            Console.WriteLine($"Псевдослучайное число [1<30]: {random3}");
+
+            var random21 = rand2.Next();
+            Console.WriteLine($"Охрененно большое псевдослучайное число: {random21}");
+            var random22 = rand2.Next(50) + 1;
+            Console.WriteLine($"Псевдослучайное число [1-50]: {random22}");
+            var random23 = rand2.Next(1, 30);
+            Console.WriteLine($"Псевдослучайное число [1<30]: {random23}");
+
+            Console.WriteLine("Работа с массивами");
+
+            try
+            {
+                var arrayX = new int[5, 4];
+
+                for (int j = 0; j < 4; j++)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        arrayX[i, j] = rand1.Next(10) + 5;
+                    }
+                }
+
+                for (int j = 0; j < 4; j++)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.Write($"{arrayX[i, j]} ");
+                    }
+
+                    Console.WriteLine();
+                }
+
+                arrayX[6, 6] = rand1.Next(10);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+
+            Console.WriteLine("Работа с зубчатыми массивами");
+
+
+            try
+            {
+                // 1, 2, 3, 4
+                // 1, 2
+                // 1, 2, 3, 4, 5, 6, 7, 8, 9
+                int[][] arrayJagged = new int[5][];
+                arrayJagged[0] = new int[5];
+                arrayJagged[1] = new int[3];
+                arrayJagged[2] = new int[6];
+                arrayJagged[3] = new int[11];
+                arrayJagged[4] = new int[2];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    for (var j = 0; j < arrayJagged[i].Length; j++)
+                    {
+                        var tep = 5;
+                        arrayJagged[i][j] = rand1.Next(20) + 5;
+                    }
+                }
+
+
+
+                for (int i = 0; i < 5; i++)
+                {
+                    for (var j = 0; j < arrayJagged[i].Length; j++)
+                    {
+                        Console.Write($"{arrayJagged[i][j]} ");
+                    }
+                    Console.WriteLine();
+                }
+
+                for (int i = 0; i < 6; i++)
+                    arrayJagged[2][i] = rand1.Next(20);
+
+                Console.WriteLine("==============================");
+
+                var array = new int[5];
+                var array1 = new int[] { 5, 6, 76, 5, 4, 3 };
+                var tempArray = arrayJagged[2];
+                arrayJagged[2] = new int[7];
+                for (int i = 0; i < tempArray.Length; i++)
+                {
+                    arrayJagged[2][i] = tempArray[i];
+                }
+
+                arrayJagged[2][6] = 1;
+
+
+                for (int i = 0; i < 5; i++)
+                {
+                    for (var j = 0; j < arrayJagged[i].Length; j++)
+                        Console.Write($"{arrayJagged[i][j]} ");
+
+                    Console.WriteLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            //try
+            //{
+            //    throw new Exception("Какая то хрень, чувак, завязывай с программированием - ты лошара!");
+
+            //    //var b = 0;
+            //    //int a = 10 / b;
+
+            //    // arrayX[5, 5] = 0; // Invalid boundries
+
+            //    //arrayX[0, 0] = 0; // All good
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine($"Что-то пошло не так: {e.Message}");
+            //}
+
+
+            //for (int j = 0; j < 4; j++)
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        Console.Write($"{arrayX[i, j]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+        }
+
+        private static void Test3()
+        {
+            var stroka = "asdfasdfa\\sdfas\ndfgdksfgjsd;flgkdjsfg;lskdfjg;sdflkgsdfg";
+            //var simbol = '';
+            for (int i = 0; i < stroka.Length; i++)
+            {
+                var a = stroka[i];
+            }
+
             var arrayItnSingle1 = new int[5];
-                                            //0  1  2  3  4  5 - index
+            //0  1  2  3  4  5 - index
             var arrayItnSingle2 = new int[] { 4, 5, 6, 3, 2, 4 };
             var arrayItnSingle3 = new double[] { 4, 5, 6, 3, 2, 4 };
-            var arrayItnSingle4 = new bool[] 
+            var arrayItnSingle4 = new bool[]
                 { true, false, true, false, false, true };
 
             //                                6

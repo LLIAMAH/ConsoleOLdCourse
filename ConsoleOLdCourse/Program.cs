@@ -1,6 +1,8 @@
 ﻿using System;
 using System.CodeDom;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using ConsoleOLdCourse.Classes;
+using OurPersonalLib.Structures;
 
 namespace ConsoleOLdCourse
 {
@@ -14,45 +16,116 @@ namespace ConsoleOLdCourse
         Right = 0b00001000,
     }
 
-    public enum Gender
-    {
-        Unknown = -1,
-        Male,
-        Female
-    }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите первое число: ");
-            var aString = Console.ReadLine();
-            var a = ConvertStringToDouble(aString);
+            try
+            {
+                var t = Console.ReadLine();
 
-            Console.Write("Введите второе число: ");
-            var bString = Console.ReadLine();
-            var b = ConvertStringToDouble(bString);
+                var person1 = new Person("Жук");
+                var person2 = new Person("Муха");
 
-            // a =3 b = 2
-            var result = Sum(a, b);
-            Console.WriteLine($"A: {a}");
-            Console.WriteLine($"B: {b}");
+                Person person3 = new Person() { Name = "Павук!", Health = 120 };
 
-            var result2 = Sum1(ref a, ref b);
-            Console.WriteLine($"A: {a}");
-            Console.WriteLine($"B: {b}");
-            Console.WriteLine($"Результатом сложения будет: {result}");
-            Console.WriteLine($"Результатом сложения будет: {result2}");
+                do
+                {
+                    person1.Attack(ref person2);
+                    person2.Attack(ref person1);
+                } while (person1.IsNotDead() || person2.IsNotDead());
 
+                if (person1.IsNotDead())
+                {
+                    Console.WriteLine($"Победил {person1.Name}");
+                }
+                else if (person2.IsNotDead())
+                {
+                    Console.WriteLine($"Победил {person2.Name}");
+                }
+                else
+                {
+                    Console.WriteLine("Погибли оба");
+                }
 
-            var result3 = Sum3(a, b, out bool aLessB);
-            if(aLessB)
-                Console.WriteLine("A меньше B");
-            else
-                Console.WriteLine("A больше B");
-            Console.WriteLine($"Результатом сложения будет: {result3}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                var t = Console.ReadLine();
+            }
 
         }
+
+        static T[] IncrementArraySize<T>(T[] array)
+        {
+            var length = array.Length;
+            var tempArray = new T[length + 1];
+            for (int i = 0; i < length; i++)
+            {
+                tempArray[i] = array[i];
+            }
+
+            return tempArray;
+        }
+
+        static int SumThreeNumber(int a = 0, int b = 0, int c = 0)
+        {
+            return a + b + c;
+        }
+
+        static int SumThreeNumber(int a = 0, int b = 0)
+        {
+            return a + b;
+        }
+
+        static T[] IncrementArraySize<T>(T[] array, T inputValue)
+        {
+            var length = array.Length;
+            var tempArray = new T[length + 1];
+            for (int i = 0; i < length; i++)
+            {
+                tempArray[i] = array[i];
+            }
+
+            tempArray[length] = inputValue;
+
+            return tempArray;
+        }
+
+        static string Conversion<T>(T inputValue)
+        {
+            return inputValue.ToString();
+        }
+
+        //static int[] IncrementArraySize(int[] array, bool totalyNew = false)
+        //{
+        //    if (totalyNew)
+        //    {
+        //        return new int[array.Length + 1];
+        //    }
+
+        //    var length = array.Length;
+        //    var tempArray = new int[length + 1];
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        tempArray[i] = array[i];
+        //    }
+
+        //    return tempArray;
+        //}
+
+        //static double[] IncrementArraySize(double[] array)
+        //{
+        //    var length = array.Length;
+        //    var tempArray = new double[length + 1];
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        tempArray[i] = array[i];
+        //    }
+
+        //    return tempArray;
+        //}
 
         private static double Sum(double a, double b)
         {
@@ -119,6 +192,64 @@ namespace ConsoleOLdCourse
             }
 
             return 0;
+        }
+
+        private static void Test6()
+        {
+            int a1, a2, a3;
+            a1 = 10;
+            a2 = 20;
+            a3 = 30;
+
+            var resultSum3 = SumThreeNumber(a1, a2, a3);
+
+            var rand = new Random();
+            var array = new int[10];
+            var arrayDouble = new double[10];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rand.Next(30) + 1;
+            }
+
+            Console.WriteLine(string.Join(", ", array));
+
+            array = IncrementArraySize(array);
+            arrayDouble = IncrementArraySize<double>(arrayDouble);
+            Console.WriteLine(string.Join(", ", array));
+
+            array = IncrementArraySize(array);
+            Console.WriteLine(string.Join(", ", array));
+        }
+
+        private static void Test5()
+        {
+            Console.Write("Введите первое число: ");
+            var aString = Console.ReadLine();
+            var a = ConvertStringToDouble(aString);
+
+            Console.Write("Введите второе число: ");
+            var bString = Console.ReadLine();
+            var b = ConvertStringToDouble(bString);
+
+            // a =3 b = 2
+            var result = Sum(a, b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+
+            var result2 = Sum1(ref a, ref b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+            Console.WriteLine($"Результатом сложения будет: {result}");
+            Console.WriteLine($"Результатом сложения будет: {result2}");
+
+            var result3 = Sum3(a, b, out bool aLessB);
+            if (aLessB)
+                Console.WriteLine("A меньше B");
+            else
+                Console.WriteLine("A больше B");
+
+            Console.WriteLine($"Результатом сложения будет: {result3}");
         }
 
         private static void Test4()

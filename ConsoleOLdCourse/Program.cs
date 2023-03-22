@@ -52,19 +52,6 @@ namespace ConsoleOLdCourse
                 Console.WriteLine("A больше B");
             Console.WriteLine($"Результатом сложения будет: {result3}");
 
-
-            //var rand1 = new Random();
-            //var arrayX = new int[5, 4];
-
-            //for (int j = 0; j < 4; j++)
-            //{
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        arrayX[i, j] = rand1.Next(10) + 5;
-            //    }
-            //}
-
-            //DrawArray(arrayX, 5, 4);
         }
 
         private static double Sum(double a, double b)

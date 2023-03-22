@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using ConsoleOLdCourse.Classes;
 
 namespace ConsoleOLdCourse
@@ -25,46 +24,201 @@ namespace ConsoleOLdCourse
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите первое число: ");
-            var aString = Console.ReadLine();
-            var a = ConvertStringToDouble(aString);
+            
+            var n = 0;
+            do
+            {
+                Console.Write("Введите размерность массива N в диапазоне [10..20]: ");
+                var stringN = Console.ReadLine();
+                try
+                {
+                    n = Convert.ToInt32(stringN);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Какая-то ошибка: {ex.Message}");
+                }
 
-            Console.Write("Введите второе число: ");
-            var bString = Console.ReadLine();
-            var b = ConvertStringToDouble(bString);
+            } while (n < 10 || n > 20);
 
-            // a =3 b = 2
-            var result = Sum(a, b);
-            Console.WriteLine($"A: {a}");
-            Console.WriteLine($"B: {b}");
+            var rand = new Random();
+            var array = new int[n, n];
+            for (int j = 0; j < n; j++)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    array[i, j] = rand.Next(n) + 1;
+                }
+            }
 
-            var result2 = Sum1(ref a, ref b);
-            Console.WriteLine($"A: {a}");
-            Console.WriteLine($"B: {b}");
-            Console.WriteLine($"Результатом сложения будет: {result}");
-            Console.WriteLine($"Результатом сложения будет: {result2}");
+            DrawArray(array, n, n);
 
+            var result1 = MethodTaskRus(array, n, out string[] usedNumbersString1);
+            if (usedNumbersString1 != null)
+            {
+                var resUsedNumbers1 = string.Join(", ", usedNumbersString1);
+                Console.WriteLine($"Используемые числа (Рус): {resUsedNumbers1}.");
+            }
+            Console.WriteLine($"Результат суммирования (Рус): {result1}.");
+            Console.WriteLine();
 
-            var result3 = Sum3(a, b, out bool aLessB);
-            if(aLessB)
-                Console.WriteLine("A меньше B");
-            else
-                Console.WriteLine("A больше B");
-            Console.WriteLine($"Результатом сложения будет: {result3}");
+            var result2 = MethodTaskSquirrel(array, n, out string[] usedNumbersString2);
+            if (usedNumbersString2 != null)
+            {
+                var resUsedNumbers2 = string.Join(", ", usedNumbersString2);
+                Console.WriteLine($"Используемые числа (Настя): {resUsedNumbers2}.");
+            }
+            Console.WriteLine($"Результат суммирования (Настя): {result2}.");
+            Console.WriteLine();
+            
+            var result3 = MethodTaskEgor(array, n, out string[] usedNumbersString3);
+            if (usedNumbersString3 != null)
+            {
+                var resUsedNumbers3 = string.Join(", ", usedNumbersString3);
+                Console.WriteLine($"Используемые числа (Егор): {resUsedNumbers3}.");
+            }
+            Console.WriteLine($"Результат суммирования (Егор): {result3}.");
+            Console.WriteLine();
+        }
 
+        private static double MethodTaskRus(int[,] array, int n, out string[] usedNumbersString)
+        {
+            var indexOfUsedNumbers = 0;
+            int[] usedNumbers = new int[] { -1 };
+            usedNumbersString = new string[] { "" };
+            const int step = 6;
+            var counter = 1;
+            for (int j = 0; j < n; j++)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (counter == step)
+                    {
+                        counter = 0;
+                        if (array[i, j] > 7)
+                        {
+                            usedNumbers[indexOfUsedNumbers] = array[i, j];
+                            usedNumbersString[indexOfUsedNumbers] = $"{array[i, j]} [{i},{j}]";
+                            indexOfUsedNumbers++;
+                            usedNumbers = RegenerateUsedNumbersArray(usedNumbers);
+                            usedNumbersString = RegenerateUsedNumbersArray(usedNumbersString);
+                        }
+                    }
+                    counter++;
+                }
+            }
 
-            //var rand1 = new Random();
-            //var arrayX = new int[5, 4];
+            usedNumbersString = RemoveLastEmptyItem(usedNumbersString);
 
-            //for (int j = 0; j < 4; j++)
-            //{
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        arrayX[i, j] = rand1.Next(10) + 5;
-            //    }
-            //}
+            if (usedNumbers.Length <= 1)
+                return 0;
 
-            //DrawArray(arrayX, 5, 4);
+            double result = 0.0;
+            for (int i = 0; i < usedNumbers.Length - 1; i++)
+                result += usedNumbers[i];
+
+            return result;
+        }
+
+        private static double MethodTaskSquirrel(int[,] array, int n, out string[] usedNumbersString)
+        {
+            var indexOfUsedNumbers = 0;
+            int[] usedNumbers = new int[] { -1 };
+            usedNumbersString = new string[] { "" };
+            const int step = 3;
+            var counter = 1;
+
+            for (int j = 0; j < n; j++)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (counter == step)
+                    {
+                        counter = 0;
+                        if ((array[i, j] % 3) == 0)
+                        {
+                            usedNumbers[indexOfUsedNumbers] = array[i, j];
+                            usedNumbersString[indexOfUsedNumbers] = $"{array[i, j]} [{i},{j}]";
+                            indexOfUsedNumbers++;
+                            usedNumbers = RegenerateUsedNumbersArray(usedNumbers);
+                            usedNumbersString = RegenerateUsedNumbersArray(usedNumbersString);
+                        }
+                    }
+                    counter++;
+                }
+            }
+
+            usedNumbersString = RemoveLastEmptyItem(usedNumbersString);
+
+            if (usedNumbers.Length <= 1)
+                return 0;
+
+            double result = 0.0;
+            for (int i = 0; i < usedNumbers.Length - 1; i++)
+                result += usedNumbers[i];
+
+            return result;
+        }
+
+        private static double MethodTaskEgor(int[,] array, int n, out string[] usedNumbersString)
+        {
+            var indexOfUsedNumbers = 0;
+            int[] usedNumbers = new int[] { -1 };
+            usedNumbersString = new string[] { "" };
+
+            for (int j = 0; j < n; j++)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (array[i, j] == 1)
+                        continue;
+
+                    var number = Math.Sqrt(array[i, j]);
+                    var ceiled = (int)Math.Ceiling(number);
+
+                    if (!(Math.Abs(number - ceiled) > 0))
+                    {
+                        usedNumbers[indexOfUsedNumbers] = array[i, j];
+                        usedNumbersString[indexOfUsedNumbers] = $"{array[i, j]} [{i},{j}]";
+                        indexOfUsedNumbers++;
+                        usedNumbers = RegenerateUsedNumbersArray(usedNumbers);
+                        usedNumbersString = RegenerateUsedNumbersArray(usedNumbersString);
+                    }
+                }
+            }
+
+            usedNumbersString = RemoveLastEmptyItem(usedNumbersString);
+
+            if (usedNumbers.Length <= 1)
+                return 0;
+
+            double result = 0.0;
+            for (int i = 0; i < usedNumbers.Length - 1; i++)
+                result += usedNumbers[i];
+
+            return result;
+        }
+
+        private static string[] RemoveLastEmptyItem(string[] usedNumbersString)
+        {
+            if (usedNumbersString.Length <= 1)
+                return null;
+
+            var temp = new string[usedNumbersString.Length - 1];
+            for (int i = 0; i < usedNumbersString.Length - 1; i++)
+                temp[i] = usedNumbersString[i];
+
+            return temp;
+        }
+
+        private static T[] RegenerateUsedNumbersArray<T>(T[] array)
+        {
+            var length = array.Length;
+            var tempArray = new T[length + 1];
+            for (int i = 0; i < array.Length; i++)
+                tempArray[i] = array[i];
+
+            return tempArray;
         }
 
         private static double Sum(double a, double b)
@@ -102,7 +256,7 @@ namespace ConsoleOLdCourse
             {
                 for (int i = 0; i < intX; i++)
                 {
-                    Console.Write($"{array[i, j]} ");
+                    Console.Write($"{array[i, j],3} ");
                 }
 
                 Console.WriteLine();
@@ -132,6 +286,36 @@ namespace ConsoleOLdCourse
             }
 
             return 0;
+        }
+
+        private static void Test5()
+        {
+            Console.Write("Введите первое число: ");
+            var aString = Console.ReadLine();
+            var a = ConvertStringToDouble(aString);
+
+            Console.Write("Введите второе число: ");
+            var bString = Console.ReadLine();
+            var b = ConvertStringToDouble(bString);
+
+            // a =3 b = 2
+            var result = Sum(a, b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+
+            var result2 = Sum1(ref a, ref b);
+            Console.WriteLine($"A: {a}");
+            Console.WriteLine($"B: {b}");
+            Console.WriteLine($"Результатом сложения будет: {result}");
+            Console.WriteLine($"Результатом сложения будет: {result2}");
+
+
+            var result3 = Sum3(a, b, out bool aLessB);
+            if (aLessB)
+                Console.WriteLine("A меньше B");
+            else
+                Console.WriteLine("A больше B");
+            Console.WriteLine($"Результатом сложения будет: {result3}");
         }
 
         private static void Test4()
@@ -206,7 +390,6 @@ namespace ConsoleOLdCourse
                 {
                     for (var j = 0; j < arrayJagged[i].Length; j++)
                     {
-                        var tep = 5;
                         arrayJagged[i][j] = rand1.Next(20) + 5;
                     }
                 }

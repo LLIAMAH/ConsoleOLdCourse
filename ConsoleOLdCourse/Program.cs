@@ -1,6 +1,4 @@
 ﻿using System;
-using System.CodeDom;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using ConsoleOLdCourse.Classes;
 using OurPersonalLib.Structures;
 
@@ -20,41 +18,6 @@ namespace ConsoleOLdCourse
     {
         static void Main(string[] args)
         {
-            try
-            {
-                var t = Console.ReadLine();
-
-                var person1 = new Person("Жук");
-                var person2 = new Person("Муха");
-
-                Person person3 = new Person() { Name = "Павук!", Health = 120 };
-
-                do
-                {
-                    person1.Attack(ref person2);
-                    person2.Attack(ref person1);
-                } while (person1.IsNotDead() || person2.IsNotDead());
-
-                if (person1.IsNotDead())
-                {
-                    Console.WriteLine($"Победил {person1.Name}");
-                }
-                else if (person2.IsNotDead())
-                {
-                    Console.WriteLine($"Победил {person2.Name}");
-                }
-                else
-                {
-                    Console.WriteLine("Погибли оба");
-                }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                var t = Console.ReadLine();
-            }
-
         }
 
         static T[] IncrementArraySize<T>(T[] array)
@@ -192,6 +155,44 @@ namespace ConsoleOLdCourse
             }
 
             return 0;
+        }
+
+        private static void Test7()
+        {
+            try
+            {
+                var t = Console.ReadLine();
+
+                var person1 = new Person("Жук");
+                var person2 = new Person("Муха");
+
+                Person person3 = new Person() { Name = "Павук!", Health = 120 };
+
+                do
+                {
+                    person1.Attack(ref person2);
+                    person2.Attack(ref person1);
+                } while (person1.IsNotDead() || person2.IsNotDead());
+
+                if (person1.IsNotDead())
+                {
+                    Console.WriteLine($"Победил {person1.Name}");
+                }
+                else if (person2.IsNotDead())
+                {
+                    Console.WriteLine($"Победил {person2.Name}");
+                }
+                else
+                {
+                    Console.WriteLine("Погибли оба");
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                var t = Console.ReadLine();
+            }
         }
 
         private static void Test6()

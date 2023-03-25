@@ -44,6 +44,7 @@ namespace ConsoleOLdCourse
 
         static T[] IncrementArraySize<T>(T[] array, T inputValue)
         {
+            var a = new object();
             var length = array.Length;
             var tempArray = new T[length + 1];
             for (int i = 0; i < length; i++)

@@ -191,7 +191,6 @@ namespace ConsoleAppCore.Classes
         {
             Console.WriteLine("Мы нарисовали супер мега ультра треугольник!");
         }
-         *
          */
     }
 

@@ -6,10 +6,10 @@ namespace ConsoleAppCore.Classes
     {
         public string Name { get; }
         public int Health { get; }
-        public void Atack(IPlayerCharacter character);
+        public void Attack(IPlayerCharacter character);
         void DecreaseHealth(int hitCount);
     }
-
+    
     public interface ICanGetIntoTrap
     {
         void DecreaseHealth(int hitCount);
@@ -25,7 +25,7 @@ namespace ConsoleAppCore.Classes
             this.Health = 100;
         }
 
-        public void Atack(IPlayerCharacter enemy)
+        public void Attack(IPlayerCharacter enemy)
         {
             var d20Result = Dice.Roll2(DiceFacet.D20); 
             if (d20Result > 5)
@@ -55,7 +55,7 @@ namespace ConsoleAppCore.Classes
     {
         public string Name { get; init; }
         public int Health { get; set; }
-        public void Atack(IPlayerCharacter character)
+        public void Attack(IPlayerCharacter character)
         {
             var d20Result = Dice.Roll2(DiceFacet.D20);
             if (d20Result > 5)

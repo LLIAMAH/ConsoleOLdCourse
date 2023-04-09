@@ -28,59 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tbListItem = new TextBox();
-            bnAdd = new Button();
-            lbItemsList = new ListBox();
+            bnFGetDrives = new Button();
+            tvFileSystem = new TreeView();
+            button1 = new Button();
+            rtbContext = new RichTextBox();
+            bnWrite = new Button();
+            bnRead = new Button();
+            bnReadStruct = new Button();
+            bnWriteStruct = new Button();
             SuspendLayout();
             // 
-            // tbListItem
+            // bnFGetDrives
             // 
-            tbListItem.Location = new Point(22, 12);
-            tbListItem.Name = "tbListItem";
-            tbListItem.Size = new Size(545, 31);
-            tbListItem.TabIndex = 0;
-            tbListItem.Text = "Привет ученики";
+            bnFGetDrives.Location = new Point(12, 12);
+            bnFGetDrives.Name = "bnFGetDrives";
+            bnFGetDrives.Size = new Size(480, 66);
+            bnFGetDrives.TabIndex = 0;
+            bnFGetDrives.Text = "Get Drives";
+            bnFGetDrives.UseVisualStyleBackColor = true;
+            bnFGetDrives.Click += bnFGetDrives_Click;
             // 
-            // bnAdd
+            // tvFileSystem
             // 
-            bnAdd.Location = new Point(573, 12);
-            bnAdd.Name = "bnAdd";
-            bnAdd.Size = new Size(245, 116);
-            bnAdd.TabIndex = 1;
-            bnAdd.Text = "button1";
-            bnAdd.UseVisualStyleBackColor = true;
-            bnAdd.Click += bnAdd_Click;
-            bnAdd.MouseHover += bnAdd_MouseHover;
+            tvFileSystem.Location = new Point(12, 84);
+            tvFileSystem.Name = "tvFileSystem";
+            tvFileSystem.Size = new Size(480, 509);
+            tvFileSystem.TabIndex = 1;
             // 
-            // lbItemsList
+            // button1
             // 
-            lbItemsList.FormattingEnabled = true;
-            lbItemsList.ItemHeight = 25;
-            lbItemsList.Location = new Point(22, 49);
-            lbItemsList.Name = "lbItemsList";
-            lbItemsList.Size = new Size(545, 329);
-            lbItemsList.TabIndex = 2;
+            button1.Location = new Point(712, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // rtbContext
+            // 
+            rtbContext.Location = new Point(529, 151);
+            rtbContext.Name = "rtbContext";
+            rtbContext.Size = new Size(758, 465);
+            rtbContext.TabIndex = 3;
+            rtbContext.Text = "";
+            // 
+            // bnWrite
+            // 
+            bnWrite.Location = new Point(529, 101);
+            bnWrite.Name = "bnWrite";
+            bnWrite.Size = new Size(174, 44);
+            bnWrite.TabIndex = 4;
+            bnWrite.Text = "Write";
+            bnWrite.UseVisualStyleBackColor = true;
+            bnWrite.Click += bnWrite_Click;
+            // 
+            // bnRead
+            // 
+            bnRead.Location = new Point(712, 101);
+            bnRead.Name = "bnRead";
+            bnRead.Size = new Size(174, 44);
+            bnRead.TabIndex = 5;
+            bnRead.Text = "Read";
+            bnRead.UseVisualStyleBackColor = true;
+            bnRead.Click += bnRead_Click;
+            // 
+            // bnReadStruct
+            // 
+            bnReadStruct.Location = new Point(906, 12);
+            bnReadStruct.Name = "bnReadStruct";
+            bnReadStruct.Size = new Size(149, 43);
+            bnReadStruct.TabIndex = 6;
+            bnReadStruct.Text = "Read struct";
+            bnReadStruct.UseVisualStyleBackColor = true;
+            bnReadStruct.Click += bnReadStruct_Click;
+            // 
+            // bnWriteStruct
+            // 
+            bnWriteStruct.Location = new Point(1061, 12);
+            bnWriteStruct.Name = "bnWriteStruct";
+            bnWriteStruct.Size = new Size(149, 43);
+            bnWriteStruct.TabIndex = 7;
+            bnWriteStruct.Text = "WriteStruct";
+            bnWriteStruct.UseVisualStyleBackColor = true;
+            bnWriteStruct.Click += bnWriteStruct_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1195, 642);
-            Controls.Add(lbItemsList);
-            Controls.Add(bnAdd);
-            Controls.Add(tbListItem);
+            ClientSize = new Size(1431, 713);
+            Controls.Add(bnWriteStruct);
+            Controls.Add(bnReadStruct);
+            Controls.Add(bnRead);
+            Controls.Add(bnWrite);
+            Controls.Add(rtbContext);
+            Controls.Add(button1);
+            Controls.Add(tvFileSystem);
+            Controls.Add(bnFGetDrives);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox tbListItem;
-        private Button bnAdd;
-        private ListBox lbItemsList;
+        private Button bnFGetDrives;
+        private TreeView tvFileSystem;
+        private Button button1;
+        private RichTextBox rtbContext;
+        private Button bnWrite;
+        private Button bnRead;
+        private Button bnReadStruct;
+        private Button bnWriteStruct;
     }
 }

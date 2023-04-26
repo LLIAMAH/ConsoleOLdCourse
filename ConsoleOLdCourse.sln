@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OurPersonalLib", "OurPerson
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppCore", "ConsoleAppCore\ConsoleAppCore.csproj", "{539C0FC9-7F81-4CCD-8090-2015E9B86BDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWinFormsCore", "AppWinFormsCore\AppWinFormsCore.csproj", "{FDC5E3E3-6072-4572-B141-7F6D4190592F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWinFormsCore", "AppWinFormsCore\AppWinFormsCore.csproj", "{FDC5E3E3-6072-4572-B141-7F6D4190592F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{23D5458B-438D-4BD1-8A40-A49CA1B7D641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FDC5E3E3-6072-4572-B141-7F6D4190592F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDC5E3E3-6072-4572-B141-7F6D4190592F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC5E3E3-6072-4572-B141-7F6D4190592F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D5458B-438D-4BD1-8A40-A49CA1B7D641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D5458B-438D-4BD1-8A40-A49CA1B7D641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D5458B-438D-4BD1-8A40-A49CA1B7D641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D5458B-438D-4BD1-8A40-A49CA1B7D641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

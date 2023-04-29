@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             label1 = new Label();
@@ -47,20 +49,32 @@
             radioButton1 = new RadioButton();
             monthCalendar1 = new MonthCalendar();
             dateTimePicker1 = new DateTimePicker();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            label2 = new Label();
-            tabPage2 = new TabPage();
-            radioButton7 = new RadioButton();
-            tabPage3 = new TabPage();
-            tabPage4 = new TabPage();
-            tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            tabPage7 = new TabPage();
+            button2 = new Button();
+            tb1 = new TextBox();
+            tb2 = new TextBox();
+            errorProvider1 = new ErrorProvider(components);
+            toolStrip1 = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripSplitButton1 = new ToolStripSplitButton();
+            toolStripComboBox1 = new ToolStripComboBox();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            testToolStripMenuItem = new ToolStripMenuItem();
+            tbPath = new TextBox();
+            bnBrowse = new Button();
+            lbOutput = new ListBox();
+            fbdBrowse = new FolderBrowserDialog();
+            browseFolder1 = new UserControls.BrowseFolder();
             groupBox1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            toolStrip1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox2
@@ -68,7 +82,7 @@
             textBox2.Dock = DockStyle.Top;
             textBox2.Location = new Point(0, 0);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(1778, 31);
+            textBox2.Size = new Size(1979, 31);
             textBox2.TabIndex = 1;
             // 
             // textBox3
@@ -80,7 +94,7 @@
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
-            textBox3.Size = new Size(231, 35);
+            textBox3.Size = new Size(432, 35);
             textBox3.TabIndex = 2;
             textBox3.TextAlign = HorizontalAlignment.Right;
             textBox3.TextChanged += textBox3_TextChanged;
@@ -104,7 +118,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Horizontal;
-            textBox1.Size = new Size(231, 35);
+            textBox1.Size = new Size(432, 35);
             textBox1.TabIndex = 8;
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -117,7 +131,7 @@
             textBox4.Location = new Point(1479, 132);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(231, 35);
+            textBox4.Size = new Size(432, 35);
             textBox4.TabIndex = 9;
             textBox4.TextAlign = HorizontalAlignment.Right;
             // 
@@ -135,9 +149,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(961, 228);
+            listBox1.Location = new Point(715, 173);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(459, 554);
+            listBox1.Size = new Size(459, 354);
             listBox1.TabIndex = 11;
             // 
             // comboBox1
@@ -145,7 +159,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Item 1", "Item 2", "Item 3", "Double item 1", "Double item 2" });
-            comboBox1.Location = new Point(568, 175);
+            comboBox1.Location = new Point(458, 83);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(383, 33);
             comboBox1.TabIndex = 12;
@@ -153,7 +167,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(594, 265);
+            button1.Location = new Point(479, 130);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 13;
@@ -166,7 +180,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Indeterminate;
-            checkBox1.Location = new Point(123, 281);
+            checkBox1.Location = new Point(76, 130);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(232, 29);
             checkBox1.TabIndex = 14;
@@ -177,7 +191,7 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(715, 691);
+            radioButton5.Location = new Point(1162, 132);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(252, 29);
             radioButton5.TabIndex = 19;
@@ -189,7 +203,7 @@
             // radioButton6
             // 
             radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(715, 726);
+            radioButton6.Location = new Point(1162, 167);
             radioButton6.Name = "radioButton6";
             radioButton6.Size = new Size(211, 29);
             radioButton6.TabIndex = 20;
@@ -203,7 +217,7 @@
             groupBox1.Controls.Add(radioButton3);
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(123, 590);
+            groupBox1.Location = new Point(53, 421);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(428, 228);
             groupBox1.TabIndex = 21;
@@ -256,132 +270,195 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(548, 391);
+            monthCalendar1.Location = new Point(424, 274);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 22;
+            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(526, 323);
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(101, 209);
             dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.ShowCheckBox = true;
+            dateTimePicker1.ShowUpDown = true;
             dateTimePicker1.Size = new Size(389, 31);
             dateTimePicker1.TabIndex = 23;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // tabControl1
+            // button2
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage4);
-            tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
-            tabControl1.Controls.Add(tabPage7);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 31);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1778, 949);
-            tabControl1.TabIndex = 24;
+            button2.Location = new Point(186, 274);
+            button2.Name = "button2";
+            button2.Size = new Size(201, 105);
+            button2.TabIndex = 24;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
-            // tabPage1
+            // tb1
             // 
-            tabPage1.Controls.Add(label2);
-            tabPage1.Location = new Point(4, 34);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1770, 911);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tb1.Location = new Point(1388, 370);
+            tb1.Name = "tb1";
+            tb1.Size = new Size(412, 31);
+            tb1.TabIndex = 25;
+            tb1.Validated += tb1_Validated;
             // 
-            // label2
+            // tb2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(353, 224);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 25);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            tb2.Location = new Point(1388, 407);
+            tb2.Name = "tb2";
+            tb2.Size = new Size(412, 31);
+            tb2.TabIndex = 26;
+            tb2.TextChanged += tb2_TextChanged;
+            tb2.Validated += tb2_Validated;
             // 
-            // tabPage2
+            // errorProvider1
             // 
-            tabPage2.Controls.Add(radioButton7);
-            tabPage2.Location = new Point(4, 34);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1770, 911);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            errorProvider1.ContainerControl = this;
             // 
-            // radioButton7
+            // toolStrip1
             // 
-            radioButton7.AutoSize = true;
-            radioButton7.Checked = true;
-            radioButton7.Location = new Point(292, 234);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(141, 29);
-            radioButton7.TabIndex = 0;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "radioButton7";
-            radioButton7.UseVisualStyleBackColor = true;
+            toolStrip1.ImageScalingSize = new Size(24, 24);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripSplitButton1, toolStripComboBox1 });
+            toolStrip1.Location = new Point(0, 64);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1979, 33);
+            toolStrip1.TabIndex = 27;
+            toolStrip1.Text = "toolStrip1";
             // 
-            // tabPage3
+            // toolStripButton1
             // 
-            tabPage3.Location = new Point(4, 34);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1770, 911);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(34, 28);
+            toolStripButton1.Text = "toolStripButton1";
             // 
-            // tabPage4
+            // toolStripSplitButton1
             // 
-            tabPage4.Location = new Point(4, 34);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1770, 911);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "tabPage4";
-            tabPage4.UseVisualStyleBackColor = true;
+            toolStripSplitButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripSplitButton1.Image = (Image)resources.GetObject("toolStripSplitButton1.Image");
+            toolStripSplitButton1.ImageTransparentColor = Color.Magenta;
+            toolStripSplitButton1.Name = "toolStripSplitButton1";
+            toolStripSplitButton1.Size = new Size(45, 28);
+            toolStripSplitButton1.Text = "toolStripSplitButton1";
             // 
-            // tabPage5
+            // toolStripComboBox1
             // 
-            tabPage5.Location = new Point(4, 34);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(1770, 911);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "tabPage5";
-            tabPage5.UseVisualStyleBackColor = true;
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(121, 33);
             // 
-            // tabPage6
+            // menuStrip1
             // 
-            tabPage6.Location = new Point(4, 34);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(1770, 911);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "tabPage6";
-            tabPage6.UseVisualStyleBackColor = true;
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, editToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 31);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1979, 33);
+            menuStrip1.TabIndex = 28;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // tabPage7
+            // fileToolStripMenuItem
             // 
-            tabPage7.Location = new Point(4, 34);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1770, 911);
-            tabPage7.TabIndex = 6;
-            tabPage7.Text = "tabPage7";
-            tabPage7.UseVisualStyleBackColor = true;
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, saveToolStripMenuItem, toolStripMenuItem1, exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(54, 29);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(158, 34);
+            openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(158, 34);
+            saveToolStripMenuItem.Text = "Save";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(155, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(158, 34);
+            exitToolStripMenuItem.Text = "Exit";
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(65, 29);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { testToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(58, 29);
+            editToolStripMenuItem.Text = "&Edit";
+            // 
+            // testToolStripMenuItem
+            // 
+            testToolStripMenuItem.Name = "testToolStripMenuItem";
+            testToolStripMenuItem.Size = new Size(144, 34);
+            testToolStripMenuItem.Text = "&Test";
+            // 
+            // tbPath
+            // 
+            tbPath.Location = new Point(1208, 592);
+            tbPath.Name = "tbPath";
+            tbPath.ReadOnly = true;
+            tbPath.Size = new Size(499, 31);
+            tbPath.TabIndex = 29;
+            // 
+            // bnBrowse
+            // 
+            bnBrowse.Location = new Point(1713, 589);
+            bnBrowse.Name = "bnBrowse";
+            bnBrowse.Size = new Size(112, 34);
+            bnBrowse.TabIndex = 30;
+            bnBrowse.Text = "Browse...";
+            bnBrowse.UseVisualStyleBackColor = true;
+            bnBrowse.Click += bnBrowse_Click;
+            // 
+            // lbOutput
+            // 
+            lbOutput.FormattingEnabled = true;
+            lbOutput.ItemHeight = 25;
+            lbOutput.Location = new Point(1208, 637);
+            lbOutput.Name = "lbOutput";
+            lbOutput.Size = new Size(617, 254);
+            lbOutput.TabIndex = 31;
+            // 
+            // browseFolder1
+            // 
+            browseFolder1.Location = new Point(274, 681);
+            browseFolder1.Name = "browseFolder1";
+            browseFolder1.Size = new Size(645, 49);
+            browseFolder1.TabIndex = 32;
+            browseFolder1.PathChanged += browseFolder1_PathChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1778, 980);
-            Controls.Add(tabControl1);
+            ClientSize = new Size(1979, 980);
+            Controls.Add(browseFolder1);
+            Controls.Add(lbOutput);
+            Controls.Add(bnBrowse);
+            Controls.Add(tbPath);
+            Controls.Add(toolStrip1);
+            Controls.Add(menuStrip1);
+            Controls.Add(tb2);
+            Controls.Add(tb1);
+            Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(monthCalendar1);
             Controls.Add(groupBox1);
@@ -397,6 +474,7 @@
             Controls.Add(label1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
+            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
@@ -405,11 +483,11 @@
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -434,15 +512,27 @@
         private RadioButton radioButton1;
         private MonthCalendar monthCalendar1;
         private DateTimePicker dateTimePicker1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private Label label2;
-        private TabPage tabPage2;
-        private RadioButton radioButton7;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private TabPage tabPage5;
-        private TabPage tabPage6;
-        private TabPage tabPage7;
+        private Button button2;
+        private TextBox tb1;
+        private TextBox tb2;
+        private ErrorProvider errorProvider1;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButton1;
+        private ToolStripSplitButton toolStripSplitButton1;
+        private ToolStripComboBox toolStripComboBox1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem testToolStripMenuItem;
+        private Button bnBrowse;
+        private TextBox tbPath;
+        private ListBox lbOutput;
+        private FolderBrowserDialog fbdBrowse;
+        private UserControls.BrowseFolder browseFolder1;
     }
 }

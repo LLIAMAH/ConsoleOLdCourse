@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizedApp", "LocalizedAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadingExperiments", "ThreadingExperiments\ThreadingExperiments.csproj", "{0793606E-E88B-448D-9FCB-47C5FD1C5B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizaedApp2", "LocalizaedApp2\LocalizaedApp2.csproj", "{B79226ED-A7FB-4535-AF07-F13FAE0E1A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizaedApp2", "LocalizaedApp2\LocalizaedApp2.csproj", "{B79226ED-A7FB-4535-AF07-F13FAE0E1A28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

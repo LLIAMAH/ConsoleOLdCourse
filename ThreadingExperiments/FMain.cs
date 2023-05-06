@@ -106,11 +106,11 @@ namespace ThreadingExperiments
             this._threadId = threadId;
         }
 
-        public void Start(object item)
+        public void Start()
         {
             this._continueToWork = true;
             this._thread = new Thread(Work);
-            this._thread.Start(item);
+            this._thread.Start();
         }
 
         public void Stop()
@@ -118,10 +118,8 @@ namespace ThreadingExperiments
             this._continueToWork = false;
         }
 
-        private void Work(object paramItem)
+        private void Work()
         {
-            var listBox = paramItem as ListBox;
-
             try
             {
                 long iCounter = 0;
@@ -139,9 +137,6 @@ namespace ThreadingExperiments
                     iCounter++;
                     Thread.Sleep(100);
                 }
-
-                if (listBox.InvokeRequired)
-                    listBox?.Invoke(WriteToListbox(listBox, _threadId));
 
                 this.StoppedWork?.Invoke(this, EventArgs.Empty);
 

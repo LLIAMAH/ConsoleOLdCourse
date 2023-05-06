@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWinFormsCore", "AppWinFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{23D5458B-438D-4BD1-8A40-A49CA1B7D641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizedApp", "LocalizedApp\LocalizedApp.csproj", "{4CA6850F-F738-4CE0-A82F-8ACF35500E16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizedApp", "LocalizedApp\LocalizedApp.csproj", "{4CA6850F-F738-4CE0-A82F-8ACF35500E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadingExperiments", "ThreadingExperiments\ThreadingExperiments.csproj", "{0793606E-E88B-448D-9FCB-47C5FD1C5B33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4CA6850F-F738-4CE0-A82F-8ACF35500E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CA6850F-F738-4CE0-A82F-8ACF35500E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CA6850F-F738-4CE0-A82F-8ACF35500E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0793606E-E88B-448D-9FCB-47C5FD1C5B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0793606E-E88B-448D-9FCB-47C5FD1C5B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0793606E-E88B-448D-9FCB-47C5FD1C5B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0793606E-E88B-448D-9FCB-47C5FD1C5B33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -90,7 +90,7 @@
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox3.BackColor = Color.Yellow;
             textBox3.ForeColor = Color.Red;
-            textBox3.Location = new Point(1479, 187);
+            textBox3.Location = new Point(650, 280);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
@@ -114,7 +114,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = Color.Yellow;
             textBox1.ForeColor = Color.Red;
-            textBox1.Location = new Point(1479, 91);
+            textBox1.Location = new Point(650, 184);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Horizontal;
@@ -128,7 +128,7 @@
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox4.BackColor = Color.Yellow;
             textBox4.ForeColor = Color.Red;
-            textBox4.Location = new Point(1479, 132);
+            textBox4.Location = new Point(650, 225);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(432, 35);
@@ -137,7 +137,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(1591, 228);
+            button5.Location = new Point(762, 321);
             button5.Name = "button5";
             button5.Size = new Size(119, 66);
             button5.TabIndex = 10;
@@ -149,9 +149,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(715, 173);
+            listBox1.Location = new Point(53, 748);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(459, 354);
+            listBox1.Size = new Size(264, 104);
             listBox1.TabIndex = 11;
             // 
             // comboBox1
@@ -191,7 +191,7 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(1162, 132);
+            radioButton5.Location = new Point(299, 539);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(252, 29);
             radioButton5.TabIndex = 19;
@@ -203,7 +203,7 @@
             // radioButton6
             // 
             radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(1162, 167);
+            radioButton6.Location = new Point(299, 573);
             radioButton6.Name = "radioButton6";
             radioButton6.Size = new Size(211, 29);
             radioButton6.TabIndex = 20;
@@ -219,7 +219,7 @@
             groupBox1.Controls.Add(radioButton1);
             groupBox1.Location = new Point(53, 421);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(428, 228);
+            groupBox1.Size = new Size(204, 228);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             groupBox1.Text = "Кандидаты ПИД\"\"\"";
@@ -227,7 +227,7 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(145, 152);
+            radioButton4.Location = new Point(23, 152);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(132, 29);
             radioButton4.TabIndex = 22;
@@ -238,7 +238,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(145, 117);
+            radioButton3.Location = new Point(23, 117);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(139, 29);
             radioButton3.TabIndex = 21;
@@ -249,7 +249,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(145, 82);
+            radioButton2.Location = new Point(23, 82);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(66, 29);
             radioButton2.TabIndex = 20;
@@ -260,7 +260,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(145, 47);
+            radioButton1.Location = new Point(23, 47);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(58, 29);
             radioButton1.TabIndex = 19;
@@ -298,7 +298,7 @@
             // 
             // tb1
             // 
-            tb1.Location = new Point(1388, 370);
+            tb1.Location = new Point(650, 421);
             tb1.Name = "tb1";
             tb1.Size = new Size(412, 31);
             tb1.TabIndex = 25;
@@ -306,7 +306,7 @@
             // 
             // tb2
             // 
-            tb2.Location = new Point(1388, 407);
+            tb2.Location = new Point(650, 458);
             tb2.Name = "tb2";
             tb2.Size = new Size(412, 31);
             tb2.TabIndex = 26;
@@ -412,7 +412,7 @@
             // 
             // tbPath
             // 
-            tbPath.Location = new Point(1208, 592);
+            tbPath.Location = new Point(650, 588);
             tbPath.Name = "tbPath";
             tbPath.ReadOnly = true;
             tbPath.Size = new Size(499, 31);
@@ -420,7 +420,7 @@
             // 
             // bnBrowse
             // 
-            bnBrowse.Location = new Point(1713, 589);
+            bnBrowse.Location = new Point(1155, 585);
             bnBrowse.Name = "bnBrowse";
             bnBrowse.Size = new Size(112, 34);
             bnBrowse.TabIndex = 30;
@@ -432,16 +432,16 @@
             // 
             lbOutput.FormattingEnabled = true;
             lbOutput.ItemHeight = 25;
-            lbOutput.Location = new Point(1208, 637);
+            lbOutput.Location = new Point(650, 633);
             lbOutput.Name = "lbOutput";
             lbOutput.Size = new Size(617, 254);
             lbOutput.TabIndex = 31;
             // 
             // browseFolder1
             // 
-            browseFolder1.Location = new Point(274, 681);
+            browseFolder1.Location = new Point(37, 655);
             browseFolder1.Name = "browseFolder1";
-            browseFolder1.Size = new Size(645, 49);
+            browseFolder1.Size = new Size(637, 49);
             browseFolder1.TabIndex = 32;
             browseFolder1.PathChanged += browseFolder1_PathChanged;
             // 
@@ -454,6 +454,7 @@
             Controls.Add(lbOutput);
             Controls.Add(bnBrowse);
             Controls.Add(tbPath);
+            Controls.Add(listBox1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
             Controls.Add(tb2);
@@ -467,7 +468,6 @@
             Controls.Add(checkBox1);
             Controls.Add(button1);
             Controls.Add(comboBox1);
-            Controls.Add(listBox1);
             Controls.Add(button5);
             Controls.Add(textBox4);
             Controls.Add(textBox1);

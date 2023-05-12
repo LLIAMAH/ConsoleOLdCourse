@@ -71,6 +71,12 @@
             lbOutput = new ListBox();
             fbdBrowse = new FolderBrowserDialog();
             browseFolder1 = new UserControls.BrowseFolder();
+            button3 = new Button();
+            button4 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            lbDataOutput = new ListBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             toolStrip1.SuspendLayout();
@@ -445,11 +451,77 @@
             browseFolder1.TabIndex = 32;
             browseFolder1.PathChanged += browseFolder1_PathChanged;
             // 
+            // button3
+            // 
+            button3.Location = new Point(1342, 58);
+            button3.Name = "button3";
+            button3.Size = new Size(206, 80);
+            button3.TabIndex = 33;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(1354, 199);
+            button4.Name = "button4";
+            button4.Size = new Size(176, 58);
+            button4.TabIndex = 34;
+            button4.Text = "Инициализация";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(1354, 266);
+            button6.Name = "button6";
+            button6.Size = new Size(176, 58);
+            button6.TabIndex = 35;
+            button6.Text = "Добавление элементов";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(1671, 199);
+            button7.Name = "button7";
+            button7.Size = new Size(176, 58);
+            button7.TabIndex = 36;
+            button7.Text = "Add new Person";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(1671, 263);
+            button8.Name = "button8";
+            button8.Size = new Size(176, 58);
+            button8.TabIndex = 37;
+            button8.Text = "button8";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // lbDataOutput
+            // 
+            lbDataOutput.FormattingEnabled = true;
+            lbDataOutput.ItemHeight = 25;
+            lbDataOutput.Location = new Point(1359, 356);
+            lbDataOutput.Name = "lbDataOutput";
+            lbDataOutput.Size = new Size(479, 529);
+            lbDataOutput.TabIndex = 38;
+            lbDataOutput.DoubleClick += lbDataOutput_DoubleClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1979, 980);
+            Controls.Add(lbDataOutput);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(browseFolder1);
             Controls.Add(lbOutput);
             Controls.Add(bnBrowse);
@@ -534,5 +606,11 @@
         private ListBox lbOutput;
         private FolderBrowserDialog fbdBrowse;
         private UserControls.BrowseFolder browseFolder1;
+        private Button button3;
+        private ListBox lbDataOutput;
+        private Button button8;
+        private Button button7;
+        private Button button6;
+        private Button button4;
     }
 }

@@ -137,10 +137,6 @@ namespace ThreadingExperiments
                     iCounter++;
                     Thread.Sleep(100);
                 }
-
-                this.StoppedWork?.Invoke(this, EventArgs.Empty);
-
-                
             }
             catch (Exception ex)
             {
@@ -150,7 +146,10 @@ namespace ThreadingExperiments
                     logWriter.Flush();
                 }
             }
-
+            finally
+            {
+                this.StoppedWork?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private Action WriteToListbox(ListBox listBox, int threadId)

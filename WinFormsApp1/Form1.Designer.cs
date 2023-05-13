@@ -421,14 +421,14 @@
             tbPath.Location = new Point(650, 588);
             tbPath.Name = "tbPath";
             tbPath.ReadOnly = true;
-            tbPath.Size = new Size(499, 31);
+            tbPath.Size = new Size(126, 31);
             tbPath.TabIndex = 29;
             // 
             // bnBrowse
             // 
-            bnBrowse.Location = new Point(1155, 585);
+            bnBrowse.Location = new Point(782, 586);
             bnBrowse.Name = "bnBrowse";
-            bnBrowse.Size = new Size(112, 34);
+            bnBrowse.Size = new Size(99, 34);
             bnBrowse.TabIndex = 30;
             bnBrowse.Text = "Browse...";
             bnBrowse.UseVisualStyleBackColor = true;
@@ -440,7 +440,7 @@
             lbOutput.ItemHeight = 25;
             lbOutput.Location = new Point(650, 633);
             lbOutput.Name = "lbOutput";
-            lbOutput.Size = new Size(617, 254);
+            lbOutput.Size = new Size(208, 254);
             lbOutput.TabIndex = 31;
             // 
             // browseFolder1
@@ -453,7 +453,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(1342, 58);
+            button3.Location = new Point(1091, 84);
             button3.Name = "button3";
             button3.Size = new Size(206, 80);
             button3.TabIndex = 33;
@@ -463,7 +463,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1354, 199);
+            button4.Location = new Point(1103, 225);
             button4.Name = "button4";
             button4.Size = new Size(176, 58);
             button4.TabIndex = 34;
@@ -473,7 +473,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(1354, 266);
+            button6.Location = new Point(1103, 292);
             button6.Name = "button6";
             button6.Size = new Size(176, 58);
             button6.TabIndex = 35;
@@ -483,7 +483,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(1671, 199);
+            button7.Location = new Point(1420, 225);
             button7.Name = "button7";
             button7.Size = new Size(176, 58);
             button7.TabIndex = 36;
@@ -493,7 +493,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(1671, 263);
+            button8.Location = new Point(1420, 289);
             button8.Name = "button8";
             button8.Size = new Size(176, 58);
             button8.TabIndex = 37;
@@ -505,7 +505,7 @@
             // 
             lbDataOutput.FormattingEnabled = true;
             lbDataOutput.ItemHeight = 25;
-            lbDataOutput.Location = new Point(1359, 356);
+            lbDataOutput.Location = new Point(1108, 382);
             lbDataOutput.Name = "lbDataOutput";
             lbDataOutput.Size = new Size(479, 529);
             lbDataOutput.TabIndex = 38;

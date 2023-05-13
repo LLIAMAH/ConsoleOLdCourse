@@ -430,17 +430,18 @@ namespace WinFormsApp1
         private long _id;
         public long Id
         {
-            get { return _id;}
+            get { return _id; }
             set
             {
                 this._id = value;
                 OnPropertyChanged("Id");
-            }}
+            }
+        }
 
         private string _firstName;
         public string FirstName
         {
-            get { return _firstName;}
+            get { return _firstName; }
             set
             {
                 _firstName = value;
@@ -451,17 +452,18 @@ namespace WinFormsApp1
         private string _lastName;
         public string LastName
         {
-            get { return _lastName;}
+            get { return _lastName; }
             set
             {
                 _lastName = value;
                 OnPropertyChanged("LastName");
-            } }
+            }
+        }
 
         private DateOnly _birthDate;
         public DateOnly BirthDate
         {
-            get { return _birthDate;}
+            get { return _birthDate; }
             set
             {
                 _birthDate = value;

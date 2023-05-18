@@ -78,7 +78,9 @@ namespace DatabaseExperimentsNET
                                     //Convert.ToInt64(reader["Id"]),
                                     Id = Convert.ToInt64(reader[(int)EnumDbColumn.Id]), 
                                     Login = reader["Login"].ToString(),
-                                    FirstName = reader["FirstName"].ToString(),
+                                    FirstName = reader["FirstName"] == DBNull.Value
+                                        ? string.Empty
+                                        : reader["FirstName"].ToString(),
                                     MiddleName = reader["MiddleName"] == DBNull.Value
                                         ? string.Empty
                                         : reader["MiddleName"].ToString(),
@@ -88,9 +90,7 @@ namespace DatabaseExperimentsNET
                                     BirthDate = Convert.ToDateTime(reader["BirthDate"]),
                                     Country = reader["Country"].ToString(),
                                     City = reader["City"].ToString(),
-                                    Street = reader["Street"] == DBNull.Value
-                                        ? string.Empty
-                                        : reader["Street"].ToString(),
+                                    Street = reader["Street"].ToString(),
                                     HouseNr = reader["HouseNr"].ToString(),
                                     ApartmentsNr = reader["ApartmentsNr"].ToString()
                                 };

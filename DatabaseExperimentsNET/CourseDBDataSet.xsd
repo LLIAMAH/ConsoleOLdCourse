@@ -261,6 +261,41 @@ SELECT Id, Login, FirstName, MiddleName, LastName, BirthDate FROM Persons WHERE 
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PersonsAndAddressesTableAdapter" GeneratorDataComponentClassName="PersonsAndAddressesTableAdapter" Name="ViewPersonsAndAddresses" UserDataComponentName="PersonsAndAddressesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.Id, p.Login, p.FirstName, p.MiddleName, p.LastName, p.BirthDate, cc.Name, cc.CountryId, c.Id AS CountryPrimaryId, c.Name AS CountryName, cc.Name AS CityName, adr.CityId, adr.Street, adr.HauseNr, adr.ApartmentsNr, adr.PersonId
+FROM   Persons AS p LEFT OUTER JOIN
+             Addresses AS adr ON p.Id = adr.PersonId INNER JOIN
+             CountryCities AS cc ON adr.CityId = cc.Id INNER JOIN
+             Countries AS c ON cc.CountryId = c.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Login" DataSetColumn="Login" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="MiddleName" DataSetColumn="MiddleName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="BirthDate" DataSetColumn="BirthDate" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="CountryId" DataSetColumn="CountryId" />
+              <Mapping SourceColumn="CountryPrimaryId" DataSetColumn="CountryPrimaryId" />
+              <Mapping SourceColumn="CountryName" DataSetColumn="CountryName" />
+              <Mapping SourceColumn="CityName" DataSetColumn="CityName" />
+              <Mapping SourceColumn="CityId" DataSetColumn="CityId" />
+              <Mapping SourceColumn="Street" DataSetColumn="Street" />
+              <Mapping SourceColumn="HauseNr" DataSetColumn="HauseNr" />
+              <Mapping SourceColumn="ApartmentsNr" DataSetColumn="ApartmentsNr" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -361,6 +396,88 @@ SELECT Id, Login, FirstName, MiddleName, LastName, BirthDate FROM Persons WHERE 
                 </xs:simpleType>
               </xs:element>
               <xs:element name="BirthDate" msprop:Generator_UserColumnName="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnVarNameInTable="columnBirthDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ViewPersonsAndAddresses" msprop:Generator_RowEvHandlerName="ViewPersonsAndAddressesRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewPersonsAndAddressesRowDeleted" msprop:Generator_RowDeletingName="ViewPersonsAndAddressesRowDeleting" msprop:Generator_RowEvArgName="ViewPersonsAndAddressesRowChangeEvent" msprop:Generator_TablePropName="ViewPersonsAndAddresses" msprop:Generator_RowChangedName="ViewPersonsAndAddressesRowChanged" msprop:Generator_RowChangingName="ViewPersonsAndAddressesRowChanging" msprop:Generator_TableClassName="ViewPersonsAndAddressesDataTable" msprop:Generator_RowClassName="ViewPersonsAndAddressesRow" msprop:Generator_TableVarName="tableViewPersonsAndAddresses" msprop:Generator_UserTableName="ViewPersonsAndAddresses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Login" msprop:Generator_ColumnPropNameInRow="Login" msprop:Generator_ColumnPropNameInTable="LoginColumn" msprop:Generator_ColumnVarNameInTable="columnLogin" msprop:Generator_UserColumnName="Login">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_UserColumnName="MiddleName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BirthDate" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_ColumnVarNameInTable="columnBirthDate" msprop:Generator_UserColumnName="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CountryId" msprop:Generator_ColumnPropNameInRow="CountryId" msprop:Generator_ColumnPropNameInTable="CountryIdColumn" msprop:Generator_ColumnVarNameInTable="columnCountryId" msprop:Generator_UserColumnName="CountryId" type="xs:long" />
+              <xs:element name="CountryPrimaryId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="CountryPrimaryId" msprop:Generator_ColumnPropNameInTable="CountryPrimaryIdColumn" msprop:Generator_ColumnVarNameInTable="columnCountryPrimaryId" msprop:Generator_UserColumnName="CountryPrimaryId" type="xs:long" />
+              <xs:element name="CountryName" msprop:Generator_ColumnPropNameInRow="CountryName" msprop:Generator_ColumnPropNameInTable="CountryNameColumn" msprop:Generator_ColumnVarNameInTable="columnCountryName" msprop:Generator_UserColumnName="CountryName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CityName" msprop:Generator_ColumnPropNameInRow="CityName" msprop:Generator_ColumnPropNameInTable="CityNameColumn" msprop:Generator_ColumnVarNameInTable="columnCityName" msprop:Generator_UserColumnName="CityName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CityId" msprop:Generator_ColumnPropNameInRow="CityId" msprop:Generator_ColumnPropNameInTable="CityIdColumn" msprop:Generator_ColumnVarNameInTable="columnCityId" msprop:Generator_UserColumnName="CityId" type="xs:long" minOccurs="0" />
+              <xs:element name="Street" msprop:Generator_ColumnPropNameInRow="Street" msprop:Generator_ColumnPropNameInTable="StreetColumn" msprop:Generator_ColumnVarNameInTable="columnStreet" msprop:Generator_UserColumnName="Street" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HauseNr" msprop:Generator_ColumnPropNameInRow="HauseNr" msprop:Generator_ColumnPropNameInTable="HauseNrColumn" msprop:Generator_ColumnVarNameInTable="columnHauseNr" msprop:Generator_UserColumnName="HauseNr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApartmentsNr" msprop:Generator_ColumnPropNameInRow="ApartmentsNr" msprop:Generator_ColumnPropNameInTable="ApartmentsNrColumn" msprop:Generator_ColumnVarNameInTable="columnApartmentsNr" msprop:Generator_UserColumnName="ApartmentsNr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_UserColumnName="PersonId" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

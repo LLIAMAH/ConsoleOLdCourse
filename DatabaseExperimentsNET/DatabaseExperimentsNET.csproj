@@ -96,7 +96,6 @@
     </None>
     <None Include="CourseDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CourseDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="CourseDBDataSet.xss">

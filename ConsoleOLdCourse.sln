@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseExperimentsNET", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsCore", "DatabaseExperimentsCore\DatabaseExperimentsCore.csproj", "{A81778A0-49FC-4442-BE67-9F8311A26FFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizedApp2", "LocalizedApp2\LocalizedApp2.csproj", "{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{A81778A0-49FC-4442-BE67-9F8311A26FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A81778A0-49FC-4442-BE67-9F8311A26FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A81778A0-49FC-4442-BE67-9F8311A26FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

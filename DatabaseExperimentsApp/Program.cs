@@ -4,23 +4,23 @@ using Microsoft.EntityFrameworkCore;
 
 var ctx = new AppDbCtx();
 
-//var book = new Book()
-//{
-//    Title = "Война и мир",
-//    Author = new List<Author>()
-//    {
-//        new Author() { FirstName = "Лев", LastName = "Толстой" }
-//    },
-//    BookType = new BookType()
-//    {
-//        Name = "Исторический роман"
-//    },
-//    Publisher = new Publisher()
-//    {
-//        Name = "Самиздат"
-//    },
-//    Year = 1973
-//};
+var book = new Book()
+{
+    Title = "Geme of thrones",
+    Author = new List<Author>()
+    {
+        new Author() { FirstName = "George", LastName = "Martin" }
+    },
+    BookType = new BookType()
+    {
+        Name = "Fantasy"
+    },
+    Publisher = new Publisher()
+    {
+        Name = "ACT"
+    },
+    Year = 1973
+};
 
 var author2 = await ctx.Authors
     .Select(o => new { FullName = $"{o.FirstName} {o.LastName}" })

@@ -22,8 +22,13 @@ var ctx = new AppDbCtx();
 //    Year = 1973
 //};
 
+var author2 = await ctx.Authors
+    .Select(o => new { FullName = $"{o.FirstName} {o.LastName}" })
+    .FirstOrDefaultAsync();
+
 var author = await ctx.Authors.Where(o => o.FirstName.Equals("Анджей") && o.LastName.Equals("Сапковский"))
     .FirstOrDefaultAsync();
+
 if (author == null)
 {
     author = new Author() { FirstName = "Анджей", LastName = "Сапковский" };

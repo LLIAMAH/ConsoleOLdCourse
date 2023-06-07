@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace DatabaseExperimentsLib.Entities
 {
+    [Index(nameof(FirstName), nameof(LastName), IsUnique = true)]
     public class Author
     {
         [Key]

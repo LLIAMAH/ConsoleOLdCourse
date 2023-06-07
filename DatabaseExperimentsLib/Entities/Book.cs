@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseExperimentsLib.Entities
 {
+    [Index(nameof(Title), nameof(Year), IsUnique = true)]
     public class Book
     {
         [Key]

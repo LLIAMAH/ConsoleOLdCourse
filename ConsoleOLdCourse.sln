@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsApp", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsLib", "DatabaseExperimentsLib\DatabaseExperimentsLib.csproj", "{D7BE494D-40EA-42F1-95D5-0D920DA0231E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseExperimentsLib2", "DatabaseExperimentsLib2\DatabaseExperimentsLib2.csproj", "{92B6874C-42C4-4274-8E79-AC239CC4576B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsLib2", "DatabaseExperimentsLib2\DatabaseExperimentsLib2.csproj", "{92B6874C-42C4-4274-8E79-AC239CC4576B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

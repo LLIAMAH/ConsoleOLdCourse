@@ -27,9 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsCore", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizedApp2", "LocalizedApp2\LocalizedApp2.csproj", "{D7AA9B35-DEA6-4E15-A7F5-B6FEAF4DC3D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseExperimentsApp", "DatabaseExperimentsApp\DatabaseExperimentsApp.csproj", "{79BB7DB0-8857-4F5A-BB73-A58E94F6569D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsApp", "DatabaseExperimentsApp\DatabaseExperimentsApp.csproj", "{79BB7DB0-8857-4F5A-BB73-A58E94F6569D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseExperimentsLib", "DatabaseExperimentsLib\DatabaseExperimentsLib.csproj", "{D7BE494D-40EA-42F1-95D5-0D920DA0231E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExperimentsLib", "DatabaseExperimentsLib\DatabaseExperimentsLib.csproj", "{D7BE494D-40EA-42F1-95D5-0D920DA0231E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseExperimentsLib2", "DatabaseExperimentsLib2\DatabaseExperimentsLib2.csproj", "{92B6874C-42C4-4274-8E79-AC239CC4576B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{D7BE494D-40EA-42F1-95D5-0D920DA0231E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7BE494D-40EA-42F1-95D5-0D920DA0231E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7BE494D-40EA-42F1-95D5-0D920DA0231E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B6874C-42C4-4274-8E79-AC239CC4576B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B6874C-42C4-4274-8E79-AC239CC4576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B6874C-42C4-4274-8E79-AC239CC4576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B6874C-42C4-4274-8E79-AC239CC4576B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

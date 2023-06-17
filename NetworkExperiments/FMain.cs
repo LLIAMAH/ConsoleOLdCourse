@@ -13,7 +13,6 @@ namespace NetworkExperiments
         private UdpClient _serverUdp;
         private UdpClient _clientUdp;
 
-
         public FMain()
         {
             InitializeComponent();
@@ -58,10 +57,12 @@ namespace NetworkExperiments
             var messageToSend = tbMessageUDP.Text;
             if (!string.IsNullOrEmpty(messageToSend))
             {
-                var sentToEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), listeningPort);
                 var bytes = Encoding.UTF8.GetBytes(messageToSend);
+                
+                var sentToEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), listeningPort);
 
-                this._clientUdp.BeginSend(bytes, bytes.Length, sentToEndPoint, new AsyncCallback(SendCallback),
+                this._clientUdp.BeginSend(bytes, bytes.Length,
+                    sentToEndPoint, new AsyncCallback(SendCallback),
                     this._clientUdp);
 
                 tbMessageUDP.Clear();

@@ -86,7 +86,7 @@
             // 
             // tbMessageTCP
             // 
-            tbMessageTCP.Location = new Point(825, 540);
+            tbMessageTCP.Location = new Point(825, 543);
             tbMessageTCP.Name = "tbMessageTCP";
             tbMessageTCP.Size = new Size(380, 31);
             tbMessageTCP.TabIndex = 6;

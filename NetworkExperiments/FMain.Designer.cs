@@ -107,7 +107,7 @@
             lbResultsTCP.ItemHeight = 25;
             lbResultsTCP.Location = new Point(825, 76);
             lbResultsTCP.Name = "lbResultsTCP";
-            lbResultsTCP.Size = new Size(1514, 454);
+            lbResultsTCP.Size = new Size(519, 454);
             lbResultsTCP.TabIndex = 4;
             // 
             // FMain

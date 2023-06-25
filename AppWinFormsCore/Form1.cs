@@ -3,6 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
 using AppWinFormsCore.Classes;
+using AppWinFormsCore.Forms;
 
 namespace AppWinFormsCore
 {
@@ -274,7 +275,27 @@ namespace AppWinFormsCore
             return g;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var testPath = openFileDialog1.FileName;
+                var t = testPath;
+            }
+            
+            //using (var form = FormFabricMethod.CreateForm(TypeOfForm.SomeToolsManagement))
+            //{
+            //    if (form.ShowDialog() == DialogResult.OK)
+            //    {
+            //        // Do some shit.
+            //    }
+            //}
 
+            //var fabricElements = new WindowsListFabric();
+            //var fabricInstance = new Fabric(fabricElements);
+
+            //var button = fabricInstance.CreateButton();
+        }
     }
 
     public class D : IDisposable

@@ -9,7 +9,7 @@ namespace NetworkExperiments.TcpClasses
     public interface ITcpPool : IDisposable
     {
         bool Add(ITcpController controller);
-        Task<bool> Work();
+        Task Work();
     }
 
     public class TcpPool : ITcpPool
@@ -37,7 +37,7 @@ namespace NetworkExperiments.TcpClasses
             return _controllers.Any(tcpController => controller.RemoteEndPoint == tcpController.RemoteEndPoint);
         }
 
-        public async Task<bool> Work()
+        public async Task Work()
         {
             var continueWork = true;
             while (continueWork)
@@ -50,9 +50,9 @@ namespace NetworkExperiments.TcpClasses
                     if(message.StartsWith("STOP"))
                         continueWork = false;
                 }
-            }
 
-            return continueWork;
+                Thread.Sleep(10);
+            }
         }
 
         private async Task PushMessageWrite(ITcpController messageSource, string message)

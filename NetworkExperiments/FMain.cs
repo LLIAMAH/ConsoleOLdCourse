@@ -25,8 +25,10 @@ namespace NetworkExperiments
 
         private TcpListener _serverTcp;
         private TcpClient _clientTcp;
+        private TcpClient _clientTcp2;
 
         public static ManualResetEvent connectDone = new ManualResetEvent(false);
+        public static ManualResetEvent connectDone2 = new ManualResetEvent(false);
 
         public FMain()
         {
@@ -46,6 +48,7 @@ namespace NetworkExperiments
             this._serverTcp = new TcpListener(tcpListenerEndPoint);
 
             this._clientTcp = new TcpClient(AddressFamily.InterNetwork);
+            this._clientTcp2 = new TcpClient(AddressFamily.InterNetwork);
         }
 
         #region UDP
@@ -132,41 +135,50 @@ namespace NetworkExperiments
 
             await Task.Run(async () =>
             {
+                ITcpPool pool = new TcpPool();
                 try
                 {
-                    var pool = new TcpPool() as ITcpPool;
-
-                    while (continueToWork)
+                    while (true)
                     {
                         var client = await this._serverTcp.AcceptTcpClientAsync();
                         var controller = new TcpController(client) as ITcpController;
 
                         pool.Add(controller);
 
-                        continueToWork = await pool.Work();
-                        if (!continueToWork)
-                            pool.Dispose();
+                        await pool.Work();
+                        Thread.Sleep(10);
                     }
                 }
                 catch (Exception ex)
                 {
                     UpdateCrossThread(lbResultsTCP, ex.Message);
                 }
+                finally
+                {
+                    pool?.Dispose();
+                }
             });
+        }
+
+        private async void bnConnectTcp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!this._clientTcp.Connected)
+                    await this._clientTcp.ConnectAsync(IPAddress.Parse("127.0.0.1"), tcpListeningPort);
+            }
+            catch (Exception ex)
+            {
+                UpdateCrossThread(lbResultTCP2, ex.Message);
+            }
         }
 
         private async void bnSendTCP_Click(object sender, EventArgs e)
         {
             try
             {
-                var ipAddressClients = IPAddress.Parse("127.0.0.1");
                 if (!this._clientTcp.Connected)
-                {
-                    this._clientTcp.BeginConnect(ipAddressClients, tcpListeningPort,
-                        new AsyncCallback(BeginCallback), this._clientTcp);
-                }
-
-                connectDone.WaitOne();
+                    UpdateCrossThread(lbResultsTCP, "Client was not connected. Press Connect button.");
 
                 var stream = this._clientTcp.GetStream();
                 var message = tbMessageTCP.Text;
@@ -192,9 +204,48 @@ namespace NetworkExperiments
             }
         }
 
-        private void BeginCallback(IAsyncResult ar)
+        private async void bnConnectTcp2_Click(object sender, EventArgs e)
         {
-            connectDone.Set();
+            try
+            {
+                if (!this._clientTcp2.Connected)
+                    await this._clientTcp2.ConnectAsync(IPAddress.Parse("127.0.0.1"), tcpListeningPort);
+            }
+            catch (Exception ex)
+            {
+                UpdateCrossThread(lbResultTCP2, ex.Message);
+            }
+        }
+
+        private async void bnSendTcp2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!this._clientTcp2.Connected)
+                    UpdateCrossThread(lbResultTCP2, "Client was not connected. Press Connect button.");
+
+                var stream = this._clientTcp2.GetStream();
+                var message = tbMessageTcp2.Text;
+                if (!string.IsNullOrEmpty(message))
+                {
+                    var data = Encoding.UTF8.GetBytes(message);
+                    await stream.WriteAsync(data, 0, data.Length);
+                }
+
+                var readingBuffer = new byte[BufferSize];
+                var result = await stream.ReadAsync(readingBuffer, 0, BufferSize);
+                if (result > 0)
+                {
+                    message = StreamReaderConvertor.Convert(readingBuffer, result);
+                    UpdateCrossThread(lbResultTCP2, message);
+                }
+
+                tbMessageTcp2.Clear();
+            }
+            catch (Exception ex)
+            {
+                UpdateCrossThread(lbResultTCP2, ex.Message);
+            }
         }
     }
 

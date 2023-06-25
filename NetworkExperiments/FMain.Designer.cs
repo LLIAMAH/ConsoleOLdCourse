@@ -36,6 +36,11 @@
             tbMessageTCP = new TextBox();
             bnListenTCP = new Button();
             lbResultsTCP = new ListBox();
+            bnSendTcp2 = new Button();
+            tbMessageTcp2 = new TextBox();
+            lbResultTCP2 = new ListBox();
+            bnConnectTcp = new Button();
+            bnConnectTcp2 = new Button();
             SuspendLayout();
             // 
             // lbResultsUDP
@@ -110,11 +115,62 @@
             lbResultsTCP.Size = new Size(519, 454);
             lbResultsTCP.TabIndex = 4;
             // 
+            // bnSendTcp2
+            // 
+            bnSendTcp2.Location = new Point(1769, 536);
+            bnSendTcp2.Name = "bnSendTcp2";
+            bnSendTcp2.Size = new Size(133, 38);
+            bnSendTcp2.TabIndex = 10;
+            bnSendTcp2.Text = "Send";
+            bnSendTcp2.UseVisualStyleBackColor = true;
+            bnSendTcp2.Click += bnSendTcp2_Click;
+            // 
+            // tbMessageTcp2
+            // 
+            tbMessageTcp2.Location = new Point(1383, 543);
+            tbMessageTcp2.Name = "tbMessageTcp2";
+            tbMessageTcp2.Size = new Size(380, 31);
+            tbMessageTcp2.TabIndex = 9;
+            // 
+            // lbResultTCP2
+            // 
+            lbResultTCP2.FormattingEnabled = true;
+            lbResultTCP2.ItemHeight = 25;
+            lbResultTCP2.Location = new Point(1383, 76);
+            lbResultTCP2.Name = "lbResultTCP2";
+            lbResultTCP2.Size = new Size(519, 454);
+            lbResultTCP2.TabIndex = 8;
+            // 
+            // bnConnectTcp
+            // 
+            bnConnectTcp.Location = new Point(1210, 12);
+            bnConnectTcp.Name = "bnConnectTcp";
+            bnConnectTcp.Size = new Size(134, 50);
+            bnConnectTcp.TabIndex = 11;
+            bnConnectTcp.Text = "Connect";
+            bnConnectTcp.UseVisualStyleBackColor = true;
+            bnConnectTcp.Click += bnConnectTcp_Click;
+            // 
+            // bnConnectTcp2
+            // 
+            bnConnectTcp2.Location = new Point(1768, 12);
+            bnConnectTcp2.Name = "bnConnectTcp2";
+            bnConnectTcp2.Size = new Size(134, 50);
+            bnConnectTcp2.TabIndex = 12;
+            bnConnectTcp2.Text = "Connect";
+            bnConnectTcp2.UseVisualStyleBackColor = true;
+            bnConnectTcp2.Click += bnConnectTcp2_Click;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2351, 762);
+            Controls.Add(bnConnectTcp2);
+            Controls.Add(bnConnectTcp);
+            Controls.Add(bnSendTcp2);
+            Controls.Add(tbMessageTcp2);
+            Controls.Add(lbResultTCP2);
             Controls.Add(bnSendTCP);
             Controls.Add(tbMessageTCP);
             Controls.Add(bnListenTCP);
@@ -139,5 +195,10 @@
         private TextBox tbMessageTCP;
         private Button bnListenTCP;
         private ListBox lbResultsTCP;
+        private Button bnSendTcp2;
+        private TextBox tbMessageTcp2;
+        private ListBox lbResultTCP2;
+        private Button bnConnectTcp;
+        private Button bnConnectTcp2;
     }
 }

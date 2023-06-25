@@ -36,6 +36,8 @@
             bnRead = new Button();
             bnReadStruct = new Button();
             bnWriteStruct = new Button();
+            button2 = new Button();
+            openFileDialog1 = new OpenFileDialog();
             SuspendLayout();
             // 
             // bnFGetDrives
@@ -113,11 +115,26 @@
             bnWriteStruct.UseVisualStyleBackColor = true;
             bnWriteStruct.Click += bnWriteStruct_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(1269, 79);
+            button2.Name = "button2";
+            button2.Size = new Size(119, 52);
+            button2.TabIndex = 8;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1431, 713);
+            Controls.Add(button2);
             Controls.Add(bnWriteStruct);
             Controls.Add(bnReadStruct);
             Controls.Add(bnRead);
@@ -143,5 +160,7 @@
         private Button bnRead;
         private Button bnReadStruct;
         private Button bnWriteStruct;
+        private Button button2;
+        private OpenFileDialog openFileDialog1;
     }
 }

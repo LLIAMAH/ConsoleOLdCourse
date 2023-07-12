@@ -279,6 +279,11 @@ namespace AppWinFormsCore
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                var intArer = new int[] { };
+
+                intArer.OrderBy(o => o);
+
+                
                 var testPath = openFileDialog1.FileName;
                 var t = testPath;
             }
